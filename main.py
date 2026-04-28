@@ -90,7 +90,7 @@ def print_round_result(user_choice, computer_choice, winner):
         console.print("[bold red]Computer wins this round![/bold red]")
 
 
-# TODO: Implement the main game loop.
+# Implement the main game loop.
 def main():
     """Main function to run the game for 3 rounds and print the final result."""
     
@@ -138,6 +138,3 @@ def main():
         
 if __name__ == "__main__":
     main()
-
-
-
