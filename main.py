@@ -90,40 +90,54 @@ def print_round_result(user_choice, computer_choice, winner):
         console.print("[bold red]Computer wins this round![/bold red]")
 
 
+# TODO: Implement the main game loop.
+def main():
+    """Main function to run the game for 3 rounds and print the final result."""
+    
+    user_score = 0
+    computer_score = 0
+    rounds = 3
 
+    console.print("[bold cyan]Welcome to Rock, Paper, Scissors![/bold cyan]")
+    console.print(
+        "[green]You can type 'rock', 'paper', 'scissors' "
+        "or use 1 for rock, 2 for paper, 3 for scissors.[/green]"
+    )
 
+    for round_num in range(1, rounds + 1):
 
+        console.print(f"\n[bold yellow]Round {round_num} of {rounds}[/bold yellow]")
 
+        # Get user and computer choices
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
 
+        # Determine winner
+        winner = determine_winner(user_choice, computer_choice)
 
+        # Print round result
+        print_round_result(user_choice, computer_choice, winner)
 
+        # Update scores
+        if winner == "user":
+            user_score += 1
+        elif winner == "computer":
+            computer_score += 1
 
+    # Print final scores and announce the overall winner
+    console.print("\n[bold underline]Game Over![/bold underline]")
+    console.print(f"[cyan]Your score: {user_score}[/cyan]")
+    console.print(f"[magenta]Computer score: {computer_score}[/magenta]")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if user_score > computer_score:
+        console.print("[bold green]Congratulations, you win the game![/bold green]")
+    elif user_score < computer_score:
+        console.print("[bold red]Sorry, the computer wins the game.[/bold red]")
+    else:
+        console.print("[yellow]It's a tie game![/yellow]")
+        
+if __name__ == "__main__":
+    main()
 
 
 
