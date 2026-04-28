@@ -76,15 +76,18 @@ def determine_winner(user_choice, computer_choice):
 
     return "computer"
 
+# Implement this function to print the round result with color.
+def print_round_result(user_choice, computer_choice, winner):
+    """Print the choices and the winner of the round using rich colors."""
+    
+    console.print(f"[magenta]Computer chose: {computer_choice}[/magenta]")
 
-
-
-
-
-
-
-
-
+    if winner == "tie":
+        console.print("[blue]It's a tie![/blue]")
+    elif winner == "user":
+        console.print("[bold green]You win this round![/bold green]")
+    else:
+        console.print("[bold red]Computer wins this round![/bold red]")
 
 
 
