@@ -55,21 +55,26 @@ def get_user_choice():
             console.print("[red]Invalid choice. Please try again.[/red]")
 
 
+# Implement this function to randomly select the computer's choice.
+def get_computer_choice():
+	"""Randomly return 'rock', 'paper', or 'scissors'."""
+	return random.choice(choices)
 
+# Implement this function to determine the winner of a round.
+def determine_winner(user_choice, computer_choice):
+    """Return 'user', 'computer', or 'tie' based on the choices."""
+    
+    if user_choice == computer_choice:
+        return "tie"
 
+    if (
+        (user_choice == 'rock' and computer_choice == 'scissors') or
+        (user_choice == 'paper' and computer_choice == 'rock') or
+        (user_choice == 'scissors' and computer_choice == 'paper')
+    ):
+        return "user"
 
-
-
-
-
-
-
-
-
-
-
-
-
+    return "computer"
 
 
 
